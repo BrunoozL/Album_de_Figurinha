@@ -6,7 +6,7 @@ include 'Controller/MenuController.php';
 
 switch ($uri_parse)
 {
-    case '/cadastro':
+    case '/cadastro/carta':
         ControllerCarta::cadastro();
     break;
 
@@ -20,6 +20,22 @@ switch ($uri_parse)
 
     case '/carta/delete';
         ControllerCarta::delete();
+    break;
+
+    case '/cadastro/selecao':
+        ControllerSelecao::cadastro();
+    break;
+
+    case '/selecao/save':
+        ControllerSelecao::save();
+    break;
+
+    case '/selecao';
+        ControllerSelecao::index();
+    break;
+
+    case '/selecao/delete';
+        ControllerSelecao::delete();
     break;
     
     default;

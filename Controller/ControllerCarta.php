@@ -18,12 +18,12 @@ class ControllerCarta
         
         if(isset($_REQUEST['id']))
             $model = $model -> getById((int) $_REQUEST['id']);
-        include 'View/CadastroView.php';
+        include 'View/Cadastro.php';
     }
 
     public static function save()
     {
-        include 'Model/Model.php';
+        include 'Model/ModelCarta.php';
 
         $carta = new ModelCarta();
         $carta -> id = $_POST['id'];
@@ -39,7 +39,7 @@ class ControllerCarta
 
     public static function delete()
     {
-        include 'Model/Model.php';
+        include 'Model/ModelCarta.php';
 
         $model = new ModelCarta();
         $model -> delete ((int) $_GET['id']);
