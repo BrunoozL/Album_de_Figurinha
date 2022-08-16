@@ -16,13 +16,17 @@ class DAOCarta
     public function insert(ModelCarta $model) 
     { 
         $sql = "INSERT INTO carta 
-                (nome, idade, posicao, nivel, selecao)
+                (nome, idade, posicao, nivel, id_selecao)
                 VALUES (?, ?, ?, ?, ?)";
         
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);
-        
+        $stmt->bindValue(1, $model->idade);
+        $stmt->bindValue(1, $model->posicao);
+        $stmt->bindValue(1, $model->nivel);
+        $stmt->bindValue(1, $model->id_selecao);
+       
         $stmt->execute();      
     }
     
@@ -38,7 +42,7 @@ class DAOCarta
 
     public function selectById($id)
     {
-        include_once 'Model/Model.php';
+        include_once 'Model/ModelCarta.php';
 
         $sql = "SELECT * FROM carta WHERE id = ?";
 
@@ -55,6 +59,10 @@ class DAOCarta
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(1, $model->idade);
+        $stmt->bindValue(1, $model->posicao);
+        $stmt->bindValue(1, $model->nivel);
+        $stmt->bindValue(1, $model->id_selecao);
         $stmt->bindValue(2, $model->id);
 
         $stmt -> execute();

@@ -11,14 +11,14 @@
     <title>Menu</title>
     <style>
     h1{
-        color: black;
+        color: white;
     }
 
     body{
         background-color: #8B8989;
     }
-
-    .btn-outline-info{
+    .btn-dark{
+        font-family: 'Mansalva', cursive;
         padding: 10px;
         font-size: 40px;
         background-color: #363636;
@@ -36,19 +36,18 @@
       <center>
       <hr>
         <hr>
-        <h1>Menu</h1>
-        <img src="Imagens/capa.jpg" class="img-thumbnail" alt="...">
+        <h1>Lista</h1>
         <hr>
         <hr>
-        <form action="/cadastro" method="post">
+        <form action="/carta" method="post">
         <div class="d-grid gap-2 d-md-block">
-        <button type="button" class="btn btn-outline-info">Cadastro</button>
+        <button type="button" class="btn btn-dark">Carta</button>
         </form>
         <br>
         <br>
 
-        <form action="/lista" method="post">
-        <button type="button" class="btn btn-outline-info">Lista</button>
+        <form action="/selecao" method="post">
+        <button type="button" class="btn btn-dark">Seleção</button>
         </form>
         </div>
 

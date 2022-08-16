@@ -3,14 +3,17 @@ $uri_parse = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 include 'Controller/ControllerCarta.php';
 include 'Controller/MenuController.php';
+include 'Controller/ControllerSelecao.php';
+
 
 switch ($uri_parse)
 {
-    case '/cadastro/carta':
+    //carta
+    case '/carta/cadastro':
         ControllerCarta::cadastro();
     break;
 
-    case '/cadastro/save':
+    case '/carta/save':
         ControllerCarta::save();
     break;
 
@@ -22,7 +25,10 @@ switch ($uri_parse)
         ControllerCarta::delete();
     break;
 
-    case '/cadastro/selecao':
+
+
+    //seleção
+    case '/selecao/cadastro':
         ControllerSelecao::cadastro();
     break;
 
@@ -36,6 +42,17 @@ switch ($uri_parse)
 
     case '/selecao/delete';
         ControllerSelecao::delete();
+    break;
+
+
+    
+    //menu
+    case '/cadastro':
+        CadastroController::cadastro();
+    break;
+    
+    case '/lista':
+        ListaController::lista();
     break;
     
     default;

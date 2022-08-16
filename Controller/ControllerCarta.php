@@ -8,7 +8,7 @@ class ControllerCarta
         include 'Model/ModelCarta.php';
         $model = new ModelCarta();
         $model -> getAllRows();
-        include 'View/ListaCarta.php';
+        include 'View/Carta/ListaCarta.php';
     }
 
     public static function cadastro()
@@ -18,7 +18,7 @@ class ControllerCarta
         
         if(isset($_REQUEST['id']))
             $model = $model -> getById((int) $_REQUEST['id']);
-        include 'View/Cadastro.php';
+        include 'View/Carta/CadastroCarta.php';
     }
 
     public static function save()
@@ -31,7 +31,7 @@ class ControllerCarta
         $carta -> idade = $_POST['idade'];
         $carta -> posicao = $_POST['posicao'];
         $carta -> nivel = $_POST['nivel'];
-        $carta -> selecao = $_POST['selecao'];
+        $carta -> id_selecao = $_POST['selecao'];
 
         $carta -> save();
         header("Location: /carta");

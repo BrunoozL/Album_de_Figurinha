@@ -22,6 +22,7 @@ class DAOSelecao
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->serie);
         
         $stmt->execute();      
     }
@@ -40,29 +41,30 @@ class DAOSelecao
     {
         include_once 'Model/ModelSelecao.php';
 
-        $sql = "SELECT * FROM carta WHERE id = ?";
+        $sql = "SELECT * FROM selecao WHERE id = ?";
 
         $stmt = $this -> conexao -> prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();
 
-        return $stmt -> fetchObject("ModelCarta");
+        return $stmt -> fetchObject("ModelSelecao");
     }
 
-    public function update(ModelCarta $model)
+    public function update(ModelSelecao $model)
     {
-        $sql = "UPDATE carta SET nome=? WHERE id=?";
+        $sql = "UPDATE selecao SET nome=? WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
         $stmt->bindValue(2, $model->id);
+        $stmt->bindValue(3, $model->serie);
 
         $stmt -> execute();
     }
         
     public function delete(int $id)
     {
-        $sql = "DELETE FROM carta WHERE id=?";
+        $sql = "DELETE FROM selecao WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $id);
