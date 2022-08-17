@@ -8,7 +8,7 @@ class ControllerSelecao
         include 'Model/ModelSelecao.php';
         $model = new ModelSelecao();
         $model -> getAllRows();
-        include 'View/ListaSelecao.php';
+        include 'View/Selecao/ListaSelecao.php';
     }
 
     public static function cadastro()
@@ -18,7 +18,7 @@ class ControllerSelecao
         
         if(isset($_REQUEST['id']))
             $model = $model -> getById((int) $_REQUEST['id']);
-        include 'View/Cadastro.php';
+        include 'View/Selecao/CadastroSelecao.php';
     }
 
     public static function save()

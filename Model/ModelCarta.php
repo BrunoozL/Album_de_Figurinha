@@ -2,7 +2,7 @@
 
 class ModelCarta
 {
-    public $id, $nome, $idade, $posicao, $nivel, $id_selecao;
+    public $id, $nome, $idade, $posicao, $nivel;
     public $rows;
 
     public function save()

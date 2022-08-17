@@ -17,9 +17,8 @@
     body{
         background-color: #8B8989;
     }
+
     .btn-dark{
-        font-family: 'Mansalva', cursive;
-        padding: 10px;
         font-size: 40px;
         background-color: #363636;
         width: 400px;
@@ -41,13 +40,13 @@
         <hr>
         <form action="/carta" method="post">
         <div class="d-grid gap-2 d-md-block">
-        <button type="button" class="btn btn-dark">Carta</button>
+        <button class="btn btn-dark">Carta</button>
         </form>
         <br>
         <br>
 
         <form action="/selecao" method="post">
-        <button type="button" class="btn btn-dark">Seleção</button>
+        <button class="btn btn-dark">Seleção</button>
         </form>
         </div>
 

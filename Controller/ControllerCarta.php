@@ -31,7 +31,6 @@ class ControllerCarta
         $carta -> idade = $_POST['idade'];
         $carta -> posicao = $_POST['posicao'];
         $carta -> nivel = $_POST['nivel'];
-        $carta -> id_selecao = $_POST['selecao'];
 
         $carta -> save();
         header("Location: /carta");

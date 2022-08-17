@@ -52,12 +52,12 @@ class DAOSelecao
 
     public function update(ModelSelecao $model)
     {
-        $sql = "UPDATE selecao SET nome=? WHERE id=?";
+        $sql = "UPDATE selecao SET nome=?, serie=? WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->id);
-        $stmt->bindValue(3, $model->serie);
+        $stmt->bindValue(2, $model->serie);
+        $stmt->bindValue(3, $model->id);
 
         $stmt -> execute();
     }

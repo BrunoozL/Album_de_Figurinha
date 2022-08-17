@@ -16,16 +16,15 @@ class DAOCarta
     public function insert(ModelCarta $model) 
     { 
         $sql = "INSERT INTO carta 
-                (nome, idade, posicao, nivel, id_selecao)
-                VALUES (?, ?, ?, ?, ?)";
+                (nome, idade, posicao, nivel)
+                VALUES (?, ?, ?, ?)";
         
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(1, $model->idade);
-        $stmt->bindValue(1, $model->posicao);
-        $stmt->bindValue(1, $model->nivel);
-        $stmt->bindValue(1, $model->id_selecao);
+        $stmt->bindValue(2, $model->idade);
+        $stmt->bindValue(3, $model->posicao);
+        $stmt->bindValue(4, $model->nivel);
        
         $stmt->execute();      
     }
@@ -55,15 +54,14 @@ class DAOCarta
 
     public function update(ModelCarta $model)
     {
-        $sql = "UPDATE carta SET nome=? WHERE id=?";
+        $sql = "UPDATE carta SET nome=?, idade=?, posicao=?, nivel=? WHERE id=?";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(1, $model->idade);
-        $stmt->bindValue(1, $model->posicao);
-        $stmt->bindValue(1, $model->nivel);
-        $stmt->bindValue(1, $model->id_selecao);
-        $stmt->bindValue(2, $model->id);
+        $stmt->bindValue(2, $model->idade);
+        $stmt->bindValue(3, $model->posicao);
+        $stmt->bindValue(4, $model->nivel);
+        $stmt->bindValue(5, $model->id);
 
         $stmt -> execute();
     }
